@@ -13,11 +13,11 @@
     <url>https://github.com/yourusername/notesapp</url>
 
     <dependencies>
-        <!-- Servlet API dependency -->
+        <!-- Jakarta Servlet API dependency (updated to Jakarta namespace) -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>5.0.0</version>  <!-- Updated for Jakarta 5 -->
             <scope>provided</scope>
         </dependency>
 
@@ -28,7 +28,7 @@
             <version>42.2.23</version>
         </dependency>
 
-        <!-- Jetty Maven Plugin (used for running the application locally) -->
+        <!-- Jetty WebApp (for local development) -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
@@ -38,7 +38,7 @@
 
     <build>
         <plugins>
-            <!-- Jetty Maven Plugin to run your app -->
+            <!-- Jetty Maven Plugin for running your app -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
@@ -52,7 +52,7 @@
                 </executions>
             </plugin>
 
-            <!-- Compiler Plugin to specify Java version -->
+            <!-- Maven Compiler Plugin to specify Java version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
