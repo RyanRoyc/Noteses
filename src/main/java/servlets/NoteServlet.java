@@ -39,14 +39,15 @@ public class NoteServlet extends HttpServlet {
         NoteDAO noteDAO = new NoteDAO();
 
         try {
-            if ("create".equals(action)) {
-                HttpSession session = req.getSession();
-                User user = (User) session.getAttribute("user");
+        	HttpSession session = req.getSession();
+            User user = (User) session.getAttribute("user");
 
-                if (user == null) {
-                    resp.sendRedirect("login.jsp");
-                    return;
-                }
+            if (user == null) {
+                resp.sendRedirect("login.jsp");
+                return;
+            }
+            
+            if ("create".equals(action)) {
 
                 String title = req.getParameter("title");
                 String content = req.getParameter("content");
@@ -65,8 +66,6 @@ public class NoteServlet extends HttpServlet {
                 noteDAO.deleteNoteById(noteId);
 
                 // After deletion, fetch the updated list of notes
-                HttpSession session = req.getSession();
-                User user = (User) session.getAttribute("user");
                 List<Note> notes = noteDAO.getNotesByUser(user.getId());
                 req.setAttribute("notes", notes);
 
