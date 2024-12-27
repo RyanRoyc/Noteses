@@ -1,6 +1,6 @@
 # Noteses WebApp
 
-A simple yet professional notepad web application following the MVC design pattern, that allows users to sign up, log in, and manage their notes. With a clean and intuitive user interface, users can add, delete, and view notes with ease.
+A simple yet professional notepad web application following the MVC design pattern with full CRUD functionality, that allows users to sign up, log in, and manage their notes. With a clean and intuitive user interface, users can add, delete, and view notes with ease.
 
 ## Features
 
